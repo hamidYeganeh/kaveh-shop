@@ -1,0 +1,17 @@
+@import "../colors";
+
+/**
+ *
+ * color: useColor($primary, "main");
+ *
+ */
+
+/* colors */
+
+@function useColor($key, $value) {
+  @if map-has-key($key, $value) {
+    @return map-get($key, $value);
+  } @else {
+    @error "There is no key/value with #{$value}";
+  }
+}

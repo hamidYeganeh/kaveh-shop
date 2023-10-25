@@ -1,0 +1,49 @@
+@import "@/styles";
+
+.container {
+  @media screen and (min-width: breakpoint("sm")) {
+    overflow: visible;
+  }
+
+  & .about_container {
+    width: 100%;
+    max-height: 450px;
+    background-image: url(../../../public/images/about-bg.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-color: transparent;
+    background-position: center;
+    border-radius: 30px;
+    padding: 1rem 2rem;
+    margin: auto;
+    overflow: visible;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 6rem;
+
+    & .about_character {
+      max-width: 500px;
+      width: 100%;
+      height: auto;
+    }
+
+    @include Mobile {
+      margin-bottom: 3rem;
+      padding: 1rem 0.5rem;
+      max-width: 100%;
+
+      & .about_subtitle {
+        font-size: fontSize($body, "sm");
+      }
+
+      & .about_title {
+        font-size: fontSize($body, "lg");
+      }
+
+      & .about_character {
+        display: none;
+      }
+    }
+  }
+}

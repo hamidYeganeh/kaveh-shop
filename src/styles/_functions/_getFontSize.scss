@@ -1,0 +1,17 @@
+@import "../_base/_typography/font_size";
+
+/**
+ *
+ * fontSize($header, "lg")
+ *
+ */
+
+/* get font size */
+
+@function fontSize($key, $value) {
+  @if map-has-key($key, $value) {
+    @return map-get($key, $value);
+  } @else {
+    @error "Map does not contain key: #{$value}";
+  }
+}

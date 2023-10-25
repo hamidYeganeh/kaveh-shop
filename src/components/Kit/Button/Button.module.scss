@@ -1,0 +1,70 @@
+@import "@/styles";
+
+/* base */
+
+.button_base {
+  outline: none;
+  border: none;
+  cursor: pointer;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+
+  border-radius: 12px;
+  transition: 500ms all;
+
+  font-size: fontSize($button, "lg");
+  font-weight: fontWeight("bold");
+
+  & .icon {
+    transform: rotate(45deg) rotateY(180deg);
+    $icon-size: 18px;
+    font-size: $icon-size;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &:hover {
+    & .icon {
+      transition: 200ms;
+      transform: rotate(0deg) rotateY(180deg);
+    }
+  }
+}
+
+/* size */
+
+.button-size-sm {
+  padding: 0.25rem 0.5rem;
+}
+.button-size-md {
+  padding: 10px 2rem;
+}
+.button-size-lg {
+  padding: 0.25rem 0.5rem;
+}
+
+/* variant */
+
+.button-variant-contained {
+  background-color: color($primary, "main");
+  color: color($light, "main");
+
+  &:is(:hover, :focus) {
+    background-color: color($primary, "dark");
+    color: color($light, "lighter");
+  }
+}
+.button-variant-outlined {
+  background-color: transparent;
+  border: 2px solid color($primary, "main");
+  color: color($primary, "main");
+
+  &:is(:hover, :focus) {
+    background-color: color($primary, "dark");
+    color: color($light, "lighter");
+  }
+}

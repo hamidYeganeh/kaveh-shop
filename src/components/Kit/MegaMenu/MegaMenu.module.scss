@@ -1,0 +1,58 @@
+@import "@/theme";
+
+.mega_menu_container {
+  width: 100%;
+  height: 100%;
+  z-index: $MEGA_MENU_ZINDEX;
+  box-shadow: 0px 10px 25px 0px
+    rgba(237.99999999999997, 38.999999999999936, 58.000000000000135, 0.2);
+  position: absolute;
+  inset: 0;
+  margin: auto;
+  top: 250%;
+  min-height: 300px;
+  background-color: transparent;
+
+  & .mega_menu_paper {
+    padding: 1rem;
+    width: 100%;
+    height: 100%;
+    transition: 500ms all;
+    background-color: useColor($common, "light");
+  }
+}
+
+.show_menu {
+  display: block;
+
+  & .mega_menu_paper {
+    opacity: 1;
+    animation: fadeIn 500ms forwards;
+  }
+}
+.hide_menu {
+  display: none;
+
+  & .mega_menu_paper {
+    opacity: 1;
+    animation: fadeOut 500ms forwards;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}

@@ -1,0 +1,17 @@
+@import "../_base/_typography/font_weight";
+
+/**
+ *
+ * fontWeight("bold")
+ *
+ */
+
+/* get font weight */
+
+@function fontWeight($value) {
+  @if map-has-key($font-weight, $value) {
+    @return map-get($font-weight, $value);
+  } @else {
+    @error "Map does not contain key: #{$value}";
+  }
+}

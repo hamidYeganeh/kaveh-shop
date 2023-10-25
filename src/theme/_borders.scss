@@ -1,0 +1,33 @@
+/* borders */
+
+// @mixin border {
+@mixin border($b-width: 1px, $b-style: solid, $b-color: black, $b-radius: 0) {
+  border: $b-width $b-style $b-color;
+  border-radius: $b-radius;
+}
+
+@mixin borderY($b-width: 1px, $b-style: solid, $b-color: black) {
+  border-top: $b-width $b-style $b-color;
+  border-bottom: $b-width $b-style $b-color;
+}
+
+@mixin borderX($b-width: 1px, $b-style: solid, $b-color: black) {
+  border-left: $b-width $b-style, $b-color;
+  border-right: $b-width $b-style $b-color;
+}
+
+@mixin borderRight($b-width: 1px, $b-style: solid, $b-color: black) {
+  border-right: $b-width $b-style $b-color;
+}
+
+@mixin borderLeft($b-width: 1px, $b-style: solid, $b-color: black) {
+  border-left: $b-width $b-style $b-color;
+}
+
+@mixin borderTop($b-width: 1px, $b-style: solid, $b-color: black) {
+  border-top: $b-width $b-style $b-color;
+}
+
+@mixin borderBottom($b-width: 1px, $b-style: solid, $b-color: black) {
+  border-bottom: $b-width $b-style $b-color;
+}

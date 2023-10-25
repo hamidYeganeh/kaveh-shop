@@ -1,0 +1,96 @@
+@import "@/styles";
+
+.grid-container {
+  width: 100%;
+  height: fit-content;
+  display: flex;
+  flex-wrap: wrap;
+  position: relative;
+}
+
+.grid-item {
+  width: 100%;
+}
+
+/* grid item sizes */
+
+$perColumnSizeToPercent: 8.33333%;
+
+@media screen and (max-width: breakpoint("xs")) {
+  @for $i from 0 through 12 {
+    .grid-item-xs-#{$i} {
+      flex: 0 0 calc($i * $perColumnSizeToPercent);
+      max-width: calc($i * $perColumnSizeToPercent);
+    }
+  }
+}
+
+@media screen and (min-width: breakpoint("xs")) and (max-width: breakpoint("sm")) {
+  @for $i from 0 through 12 {
+    .grid-item-sm-#{$i} {
+      flex: 0 0 calc($i * $perColumnSizeToPercent);
+      max-width: calc($i * $perColumnSizeToPercent);
+    }
+  }
+}
+
+@media screen and (min-width: breakpoint("sm")) and (max-width: breakpoint("md")) {
+  @for $i from 0 through 12 {
+    .grid-item-md-#{$i} {
+      flex: 0 0 calc($i * $perColumnSizeToPercent);
+      max-width: calc($i * $perColumnSizeToPercent);
+    }
+  }
+}
+
+@media screen and (min-width: breakpoint("md")) and (max-width: breakpoint("lg")) {
+  @for $i from 0 through 12 {
+    .grid-item-lg-#{$i} {
+      flex: 0 0 calc($i * $perColumnSizeToPercent);
+      max-width: calc($i * $perColumnSizeToPercent);
+    }
+  }
+}
+
+@media screen and (min-width: breakpoint("lg")) {
+  @for $i from 0 through 12 {
+    .grid-item-xl-#{$i} {
+      flex: 0 0 calc($i * $perColumnSizeToPercent);
+      max-width: calc($i * $perColumnSizeToPercent);
+    }
+  }
+}
+
+/* direction */
+
+$flex-directions: "column", "column-reverse", "row", "row-reverse", "inherit",
+  "initial", "unset";
+
+@each $flex-direction in $flex-directions {
+  .grid-flex-direction-#{$flex-direction} {
+    flex-direction: $flex-direction;
+  }
+}
+
+/* justify content */
+
+$flex-justify-contents: "baseline", "center", "end", "first baseline",
+  "flex-end", "flex-start", "left", "right", "safe", "space-around",
+  "space-between", "space-evenly", "initial", "inherit", "stretch", "unsafe",
+  "unset";
+
+@each $justify-content in $flex-justify-contents {
+  .grid-justify-content-#{$justify-content} {
+    justify-content: $justify-content;
+  }
+}
+
+/* spacing */
+
+$grid-spacings: 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12;
+
+@each $spacing in $grid-spacings {
+  .grid-spacing-#{$spacing} {
+    gap: calc($spacing * 1px);
+  }
+}

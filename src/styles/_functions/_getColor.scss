@@ -1,0 +1,17 @@
+@import "../_base/_colors/colors";
+
+/**
+ *
+ * color($primary, "main")
+ *
+ */
+
+/* get color */
+
+@function color($key, $value) {
+  @if map-has-key($key, $value) {
+    @return map-get($key, $value);
+  } @else {
+    @error "Map does not contain key: #{$value}";
+  }
+}

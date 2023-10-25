@@ -1,0 +1,54 @@
+.stack_container {
+  flex-grow: 1;
+  height: fit-content;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 0;
+}
+
+/* direction */
+
+$stack-directions: column, column-reverse, row, row-reverse, inherit, initial,
+  unset;
+
+@each $flex-direction in $stack-directions {
+  .stack-flex-direction-#{$flex-direction} {
+    flex-direction: $flex-direction;
+  }
+}
+
+/* justify content */
+
+$stack-justify-contents: baseline, center, end, flex-end, flex-start, left,
+  right, space-around, space-between, space-evenly, initial, inherit, stretch,
+  unset;
+
+@each $justify-content in $stack-justify-contents {
+  .stack-justify-content-#{$justify-content} {
+    justify-content: $justify-content;
+  }
+}
+
+/* align items */
+
+$stack-align-items: baseline, center, end, first baseline, flex-end, flex-start,
+  left, right, safe, initial, inherit, stretch, unsafe, unset;
+
+@each $align-item in $stack-align-items {
+  .stack-align-item-#{$align-item} {
+    align-items: $align-item;
+  }
+}
+
+/* spacing */
+
+$stack-spacings: 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12;
+
+@each $spacing in $stack-spacings {
+  .stack-spacing-#{$spacing} {
+    gap: calc($spacing * 1px);
+  }
+}

@@ -1,0 +1,76 @@
+@import "@/styles";
+@import "@/components/kit/Navbar/Navbar.module.scss";
+
+$marquee-top-margin: calc($navbar-height + 1rem);
+
+.hero_section {
+  width: 100%;
+  height: 100%;
+  min-height: 100vh;
+  position: relative;
+  z-index: 0;
+
+  & .marquee {
+    position: absolute;
+    top: $marquee-top-margin;
+    width: 100%;
+    text-align: center;
+    font-size: fontSize($header, "xxxl");
+    font-weight: fontWeight("bold");
+    -webkit-text-stroke: white 3px;
+    color: transparent;
+    letter-spacing: 6px;
+    opacity: 0.2;
+    z-index: 2;
+
+    @include Tablet {
+      font-size: fontSize($header, "xxl");
+      letter-spacing: 3px;
+    }
+  }
+
+  & .hero_bg_img {
+    position: absolute;
+    inset: 0;
+    margin: auto;
+    width: 100%;
+    height: 100%;
+    fill: linear-gradient(
+      180deg,
+      rgba(36, 255, 0, 0) 18.87%,
+      #0085ff 52.76%,
+      #7000ff 87.27%
+    );
+    filter: blur(125.18221282958984px);
+    z-index: 1;
+  }
+
+  & .content_wrapper {
+    margin-top: calc($marquee-top-margin + 80px);
+    z-index: 5;
+
+
+
+    & .hero_title {
+      @include Tablet {
+        font-size: fontSize($header, "lg");
+      }
+      @include Mobile {
+        font-size: fontSize($header, "md");
+      }
+    }
+
+    & .box_container {
+      width: 100%;
+      height: 100%;
+      margin-top: 12rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      @include Mobile {
+        margin-top: 3rem;
+      }
+    }
+  }
+}

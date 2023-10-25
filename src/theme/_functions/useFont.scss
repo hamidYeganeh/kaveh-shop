@@ -1,0 +1,27 @@
+@import "../typography";
+
+/**
+ *
+ * useFont($header, "lg")
+ * useFontWeight("bold")
+ */
+
+/* get font size */
+
+@function useFont($key, $value) {
+  @if map-has-key($key, $value) {
+    @return map-get($key, $value);
+  } @else {
+    @error "Map does not contain key #{$value}";
+  }
+}
+
+/* get font weight */
+
+@function useFontWeight($value) {
+  @if map-has-key($font-weight, $value) {
+    @return map-get($font-weight, $value);
+  } @else {
+    @error "Map does not contain key #{$value}";
+  }
+}
