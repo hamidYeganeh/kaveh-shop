@@ -10,6 +10,7 @@ import {
 type TProductParams = {
   productId?: number;
   query?: string;
+  limit?: number;
 };
 
 export async function getProducts(params?: TProductParams) {
@@ -21,7 +22,11 @@ export async function getProducts(params?: TProductParams) {
     singleCategoryRes,
   ] = await Promise.all([
     // all
-    fetcher(GET_ALL_PRODUCTS_ENDPOINT),
+    fetcher(GET_ALL_PRODUCTS_ENDPOINT, {
+      body: JSON.stringify({
+        limit: params?.limit,
+      }),
+    }),
     //   single
     fetcher(`${GET_SINGLE_PRODUCTS_ENDPOINT}${params?.productId}`),
     // search
