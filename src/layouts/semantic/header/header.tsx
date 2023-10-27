@@ -3,7 +3,8 @@
 import Image from "next/image";
 import Styles from "./header.module.scss";
 import { Button, Container, Iconify, Stack } from "@/components";
-import { BiHeartCircle, BiSolidHeartCircle } from "react-icons/bi";
+import { BiHeartCircle } from "react-icons/bi";
+import { AiOutlineHeart } from "react-icons/ai";
 import { Search } from "@/components/common";
 
 export const Header = () => {
@@ -12,8 +13,8 @@ export const Header = () => {
       <div className={Styles.header_container}>
         <Stack direction="row" alignItems="center" justifyContent="flex-start">
           <Button color="primary">حساب کاربری من</Button>
-          <Button color="#ff8a66">
-            <Iconify icon={<BiHeartCircle />} color="" />
+          <Button color="#ff8a66" iconButton>
+            <Iconify icon={<AiOutlineHeart />} color="" />
           </Button>
           <Search />
         </Stack>

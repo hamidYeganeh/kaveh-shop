@@ -19,19 +19,11 @@
   font-weight: fontWeight("bold");
 
   & .icon {
-    transform: rotate(45deg) rotateY(180deg);
     $icon-size: 18px;
     font-size: $icon-size;
     display: flex;
     align-items: center;
     justify-content: center;
-  }
-
-  &:hover {
-    & .icon {
-      transition: 200ms;
-      transform: rotate(0deg) rotateY(180deg);
-    }
   }
 }
 

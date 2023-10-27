@@ -2,7 +2,6 @@ import { FC } from "react";
 import Styles from "./Card.module.scss";
 import Image from "next/image";
 import { Button } from "..";
-import { useRouter } from "next/navigation";
 import Link from "next/link";
 
 interface ICardProps {
@@ -26,15 +25,13 @@ export const Card: FC<ICardProps> = (props) => {
         <Image
           src={props.thumbnail}
           alt={props.title}
-          width={300}
-          height={250}
+          width={384}
+          height={156}
           className={Styles.card_thumbnail}
         />
       </div>
 
       <h2>{props.title}</h2>
-
-      <h4>{props.description.slice(0, 200)}</h4>
 
       <Button>
         <Link href={{ pathname: "/posts/postId", query: { postId: props.id } }}>

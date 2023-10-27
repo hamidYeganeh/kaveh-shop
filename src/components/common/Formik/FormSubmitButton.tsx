@@ -1,5 +1,5 @@
 import { Button } from "@/components";
-import { IButtonTypes } from "@/components/Kit/Button/Button-types";
+import { IButtonTypes } from "@/components/Kit/Button/Button.types";
 import { useFormikContext } from "formik";
 import { FC } from "react";
 

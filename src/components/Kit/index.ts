@@ -5,3 +5,5 @@ export { Container } from "./Container";
 export { Stack } from "./Stack";
 export { Iconify } from "./Iconify";
 export { MegaMenu } from "./MegaMenu";
+export { Card } from "./Card";
+export { Switch } from "./Switch";

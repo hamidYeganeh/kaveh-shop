@@ -2,20 +2,13 @@ import { ButtonHTMLAttributes, CSSProperties, ReactNode } from "react";
 
 type TButtonSize = "sm" | "md" | "lg";
 
-type TButtonVariant = "contained" | "outlined";
-
-type TButtonBgColor =
-  | "primary"
-  | "success"
-  | "error"
-  | "warning"
-  | "info"
-  | CSSProperties["backgroundColor"];
+type TButtonVariant = "contained" | "outlined" | "standard";
 
 export interface IButtonTypes extends ButtonHTMLAttributes<HTMLButtonElement> {
   // icon
   startIcon?: ReactNode;
   endIcon?: ReactNode;
+  iconButton?: boolean;
 
   // size
   size?: TButtonSize;
@@ -26,8 +19,9 @@ export interface IButtonTypes extends ButtonHTMLAttributes<HTMLButtonElement> {
   // button state
   success?: boolean;
   failed?: boolean;
+  loading?: boolean;
+  disabled?: boolean;
 
   // color
-  bgColor?: TButtonBgColor;
   color?: CSSProperties["color"];
 }
