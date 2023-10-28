@@ -1,4 +1,4 @@
-@import "@/styles";
+@import "@/theme";
 
 .grid-container {
   width: 100%;
@@ -16,7 +16,7 @@
 
 $perColumnSizeToPercent: 8.33333%;
 
-@media screen and (max-width: breakpoint("xs")) {
+@media screen and (max-width: useuseBreakpoint("xs")) {
   @for $i from 0 through 12 {
     .grid-item-xs-#{$i} {
       flex: 0 0 calc($i * $perColumnSizeToPercent);
@@ -25,7 +25,7 @@ $perColumnSizeToPercent: 8.33333%;
   }
 }
 
-@media screen and (min-width: breakpoint("xs")) and (max-width: breakpoint("sm")) {
+@media screen and (min-width: useuseBreakpoint("xs")) and (max-width: useBreakpoint("sm")) {
   @for $i from 0 through 12 {
     .grid-item-sm-#{$i} {
       flex: 0 0 calc($i * $perColumnSizeToPercent);
@@ -34,7 +34,7 @@ $perColumnSizeToPercent: 8.33333%;
   }
 }
 
-@media screen and (min-width: breakpoint("sm")) and (max-width: breakpoint("md")) {
+@media screen and (min-width: useBreakpoint("sm")) and (max-width: useBreakpoint("md")) {
   @for $i from 0 through 12 {
     .grid-item-md-#{$i} {
       flex: 0 0 calc($i * $perColumnSizeToPercent);
@@ -43,7 +43,7 @@ $perColumnSizeToPercent: 8.33333%;
   }
 }
 
-@media screen and (min-width: breakpoint("md")) and (max-width: breakpoint("lg")) {
+@media screen and (min-width: useBreakpoint("md")) and (max-width: useBreakpoint("lg")) {
   @for $i from 0 through 12 {
     .grid-item-lg-#{$i} {
       flex: 0 0 calc($i * $perColumnSizeToPercent);
@@ -52,7 +52,7 @@ $perColumnSizeToPercent: 8.33333%;
   }
 }
 
-@media screen and (min-width: breakpoint("lg")) {
+@media screen and (min-width: useBreakpoint("lg")) {
   @for $i from 0 through 12 {
     .grid-item-xl-#{$i} {
       flex: 0 0 calc($i * $perColumnSizeToPercent);

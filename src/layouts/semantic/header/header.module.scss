@@ -1,11 +1,5 @@
 @import "@/theme";
 
 .header_container {
-  width: 100%;
   height: $HEADER_HEIGHT_DESKTOP;
-
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  background-color: red;
 }

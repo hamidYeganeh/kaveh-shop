@@ -28,11 +28,7 @@ export async function getProducts(params?: TProductParams) {
       skip: params?.skip,
     }),
     //   single
-    fetcher(
-      `${GET_SINGLE_PRODUCTS_ENDPOINT}${1}`,
-      {},
-      { cache: "force-cache" }
-    ),
+    fetcher(`${GET_SINGLE_PRODUCTS_ENDPOINT}${1}`),
     // search
     fetcher(`${SEARCH_PRODUCTS_ENDPOINT}`, { q: params?.query }),
     // all get categories
@@ -43,14 +39,21 @@ export async function getProducts(params?: TProductParams) {
     ),
   ]);
 
-  if (
-    !productsRes.ok ||
-    !singleProductRes.ok ||
-    !searchProductsRes.ok ||
-    !categoriesRes.ok ||
-    !singleCategoryRes.ok
-  ) {
-    throw new Error("Failed to fetch");
+  if (!productsRes.ok) {
+    console.log("Error: ", productsRes?.statusText);
+    throw new Error("Failed to fetch products");
+  }
+  if (!singleProductRes.ok) {
+    console.log("Error: ", singleProductRes?.statusText);
+    throw new Error("Failed to fetch product");
+  }
+  if (!categoriesRes.ok) {
+    console.log("Error: ", categoriesRes?.statusText);
+    throw new Error("Failed to fetch categories");
+  }
+  if (!singleCategoryRes.ok) {
+    console.log("Error: ", singleCategoryRes?.statusText);
+    throw new Error("Failed to fetch category");
   }
 
   const [products, singleProduct, searchProducts, categories, singleCategory] =

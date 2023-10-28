@@ -17,4 +17,7 @@ export interface IStackTypes extends HTMLAttributes<HTMLDivElement> {
 
   // stack spacing
   spacing?: TStackSpacing;
+
+  // width
+  fitContent?: boolean;
 }

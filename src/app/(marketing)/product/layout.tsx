@@ -6,7 +6,7 @@ export const metadata: Metadata = {
   description: "Shopping",
 };
 
-export default function ShopLayout({
+export default function ProductLayout({
   children,
 }: {
   children: React.ReactNode;
