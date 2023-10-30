@@ -17,22 +17,30 @@ export const Button: FC<PropsWithChildren<IButtonTypes>> = (props) => {
     loading,
     disabled,
     size,
+    variant,
     ...otherProps
   } = props;
+
+  const isIconButton = iconButton;
+  const isDisabled = loading || disabled;
 
   const ButtonClassNames = classnames(
     Styles.button_base,
     Styles[`button-size-${size}`],
+    isIconButton ? Styles[`icon-button`] : "",
+    isDisabled
+      ? Styles["button-disabled"]
+      : Styles[`button-variant-${variant}`],
     className
   );
 
   return (
     <button className={ButtonClassNames} {...otherProps}>
-      {startIcon && <span className={Styles.icon}>{startIcon}</span>}
+      {startIcon && <span className={Styles.button_icon}>{startIcon}</span>}
 
       {children}
 
-      {endIcon && <span className={Styles.icon}>{endIcon}</span>}
+      {endIcon && <span className={Styles.button_icon}>{endIcon}</span>}
     </button>
   );
 };

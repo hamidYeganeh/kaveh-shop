@@ -1,0 +1,17 @@
+@import "../breakpoint";
+
+/**
+ *
+ * useBreakpoint("lg")
+ * 
+ */
+
+/* get breakpoint */
+
+@function useBreakpoint($value) {
+  @if map-has-key($breakpoint, $value) {
+    @return map-get($breakpoint, $value);
+  } @else {
+    @error "Map does not contain key #{$value}";
+  }
+}

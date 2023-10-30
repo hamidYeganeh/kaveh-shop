@@ -8,9 +8,9 @@ export const ProductsList: FC<TProductsList> = (props) => {
 
   return (
     <div>
-      <Grid container alignItems="stretch" style={{ height: "100%" }}>
+      <Grid container justifyContent="space-between" alignItems="stretch">
         {products.map((product: any) => (
-          <Grid item key={product.id} xl={4} style={{ height: 469 }}>
+          <Grid item key={product.id} xl={4} lg={6} md={12} sm={12} xs={12}>
             <Card {...product} />
           </Grid>
         ))}

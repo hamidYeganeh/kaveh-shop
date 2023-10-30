@@ -1,0 +1,2 @@
+export interface ISkeleton {
+}

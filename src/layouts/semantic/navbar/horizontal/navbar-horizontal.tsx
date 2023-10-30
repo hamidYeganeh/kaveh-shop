@@ -6,7 +6,6 @@ import Link from "next/link";
 import { Container, Iconify, MegaMenu } from "@/components";
 import { IoIosArrowDown } from "react-icons/io";
 import { classnames } from "@/helpers";
-import { boolean } from "yup";
 import { useState } from "react";
 
 export const NavbarHorizontal = () => {

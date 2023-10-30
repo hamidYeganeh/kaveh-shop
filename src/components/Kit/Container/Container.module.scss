@@ -1,4 +1,4 @@
-@import "@/styles";
+// @import "@/styles";
 
 .container {
   width: 100%;
@@ -6,7 +6,7 @@
   max-width: 75%;
   margin: 0 auto;
 
-  @include Tablet {
-    max-width: 90%;
-  }
+  // @include Tablet {
+  //   max-width: 90%;
+  // }
 }

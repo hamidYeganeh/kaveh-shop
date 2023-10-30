@@ -1,5 +1,3 @@
-"use client";
-
 import { FC } from "react";
 import { IStackTypes } from "./Stack-types";
 import Styles from "./Stack.module.scss";
@@ -12,15 +10,18 @@ export const Stack: FC<IStackTypes> = (props) => {
     alignItems,
     flexWrap,
     className,
+    spacing,
+    fitContent,
     ...otherProps
   } = props;
 
   const StackClassName = classnames(
     Styles.stack_container,
-    Styles[`stack-flex-direction-${props.direction}`],
-    Styles[`stack-justify-content-${props.justifyContent}`],
-    Styles[`stack-align-item-${props.alignItems}`],
-    Styles[`stack-spacing-${props.spacing}`],
+    Styles[`stack-flex-direction-${direction}`],
+    Styles[`stack-justify-content-${justifyContent}`],
+    Styles[`stack-align-item-${alignItems}`],
+    Styles[`stack-spacing-${spacing}`],
+    fitContent ? Styles["stack-fit-content"] : "",
     className
   );
 

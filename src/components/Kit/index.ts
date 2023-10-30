@@ -7,3 +7,4 @@ export { Iconify } from "./Iconify";
 export { MegaMenu } from "./MegaMenu";
 export { Card } from "./Card";
 export { Switch } from "./Switch";
+export { Skeleton } from "./Skeleton";

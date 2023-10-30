@@ -1,4 +1,4 @@
-@import "@/styles";
+@import "@/theme";
 
 .textfield-container {
   width: fit-content;
@@ -13,8 +13,8 @@
   }
 
   & .text-field-base {
-    color: green;
-    color: color($primary, "main");
+    color: useColor($secondary, "main");
+    height: 50px;
   }
 
   & .text-fields-helper-text {

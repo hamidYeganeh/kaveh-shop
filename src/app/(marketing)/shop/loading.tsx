@@ -1,11 +1,14 @@
 "use client";
 
-import { Container } from "@/components";
+import { Container, Skeleton } from "@/components";
+import { Main } from "@/layouts";
 
 export default function LoadingPage() {
   return (
-    <Container>
-      <h1>Loading...</h1>
-    </Container>
+    <Main>
+      <Container>
+        <Skeleton />
+      </Container>
+    </Main>
   );
 }
