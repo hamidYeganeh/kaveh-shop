@@ -1,6 +1,9 @@
 import type { Metadata, Viewport } from "next";
 import { Inter } from "next/font/google";
 import "@/theme/global-styles.css";
+import { languages } from "./i18n/settings";
+import { dir } from "i18next";
+
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -16,13 +19,19 @@ export const metadata: Metadata = {
   icons: "favicon.ico",
 };
 
+export async function generateStaticParams() {
+  return languages.map((lng) => ({ lng }));
+}
+
 export default function RootLayout({
   children,
+  params: { lng },
 }: {
   children: React.ReactNode;
+  params: { lng: "en" | "fa" };
 }) {
   return (
-    <html lang="en" className="html">
+    <html lang={lng} dir={dir(lng)} className="html">
       <body className={inter.className + "body"}>{children}</body>
     </html>
   );

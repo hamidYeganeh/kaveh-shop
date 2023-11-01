@@ -1,7 +1,19 @@
-export default function Home() {
+import Link from "next/link";
+import { useTranslation } from "./i18n";
+
+export default async function Page({
+  params: { lng },
+}: {
+  params: { lng: string };
+}) {
+  const { t } = await useTranslation(lng, "second-page");
+  
+  
+
   return (
-    <main>
-      <h1>Home Page</h1>
-    </main>
+    <>
+      <h1>{t("title")}</h1>
+      <Link href={`/shop`}>{t("back-to-home")}</Link>
+    </>
   );
 }
