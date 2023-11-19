@@ -1,3 +1,4 @@
+// products
 export const GET_ALL_PRODUCTS_ENDPOINT = "/products";
 export const GET_SINGLE_PRODUCTS_ENDPOINT = "/products/";
 export const SEARCH_PRODUCTS_ENDPOINT = "/products/search";

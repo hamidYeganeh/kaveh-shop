@@ -1,9 +1,10 @@
 import type { Metadata, Viewport } from "next";
 import { Inter } from "next/font/google";
 import "@/theme/global-styles.css";
-import { languages } from "./i18n/settings";
 import { dir } from "i18next";
-
+import { Nprogress } from "@/components/common";
+import { LANGUAGES } from "@/constants";
+import { DEFAULT_LANGUAGE } from "@/config";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -19,20 +20,25 @@ export const metadata: Metadata = {
   icons: "favicon.ico",
 };
 
-export async function generateStaticParams() {
-  return languages.map((lng) => ({ lng }));
+export function generateStaticParams() {
+  return {
+    lng: "fa",
+  };
 }
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
-  params: { lng },
+  params,
 }: {
   children: React.ReactNode;
-  params: { lng: "en" | "fa" };
+  params: any;
 }) {
   return (
-    <html lang={lng} dir={dir(lng)} className="html">
-      <body className={inter.className + "body"}>{children}</body>
+    <html lang={DEFAULT_LANGUAGE} dir={dir(DEFAULT_LANGUAGE)} className="html">
+      <body className={inter.className + "body"}>
+        <Nprogress />
+        {children}
+      </body>
     </html>
   );
 }
